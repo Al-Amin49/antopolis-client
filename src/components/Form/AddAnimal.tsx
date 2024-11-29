@@ -5,6 +5,7 @@
 import { createAnimal } from "@/api/addApi";
 import { TCategory } from "@/types/category.type";
 import { useState } from "react";
+import { toast } from "sonner";
 
 type TAddAnimalFormProps = {
   onClose: () => void;
@@ -22,7 +23,7 @@ const AddAnimal = ({ onClose }: TAddAnimalFormProps) => {
     console.log("Submitting animal data:", animalData); 
     try {
       await createAnimal({ name, image, category : categoryId as unknown as TCategory   });
-      alert("Animal added successfully!");
+      toast.success("Animal added successfully!");
       window.location.reload()
       onClose();
     } catch (error: any) {

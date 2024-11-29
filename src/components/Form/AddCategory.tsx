@@ -3,6 +3,7 @@
 import { createCategory } from "@/api/addApi";
 
 import { useState } from "react";
+import { toast } from "sonner";
 
 
 interface AddCategoryFormProps {
@@ -16,7 +17,7 @@ const AddCategoryForm = ({ onClose }: AddCategoryFormProps) => {
     e.preventDefault();
     try {
       await createCategory({ name });
-      alert("Category added successfully!");
+      toast.success("Category added successfully!");
       window.location.reload();
       onClose();
     } catch (error) {
