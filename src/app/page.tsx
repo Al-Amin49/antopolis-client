@@ -1,19 +1,24 @@
 import AddEntity from "@/components/AddEntity";
+import Categories from "@/components/Categories";
 
-export default function Home() {
+
+const Home = async() => {
+
   return (
-  <>
-<div>
-      {/* Categories */}
-  <div>
+    <>
+      <div className="flex-row md:flex justify-center md:justify-between  max-w-5xl mx-auto pt-10 ">
+        {/* Categories */}
+        <div>
+          <Categories/>
+        </div>
 
-  </div>
-
-{/* add entity - animal and category */}
-<div>
-  <AddEntity/>
-</div>
-</div>
-  </>
+        {/* add entity - animal and category */}
+        <div>
+          <AddEntity />
+        </div>
+      </div>
+    </>
   );
-}
+};
+
+export default Home;

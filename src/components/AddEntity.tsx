@@ -2,9 +2,9 @@ import React from 'react';
 
 const AddEntity = () => {
     return (
-        <div>
-            <button className=' px-2 py-3'>Add Animal</button>
-            <button >Add Category</button>
+        <div className='mt-10 lg:mt-0'>
+            <button className=' px-4 py-1 text-white border border-white rounded-full mr-2'>Add Animal</button>
+            <button className='px-4 py-1 text-white border border-white rounded-full  mr-2' >Add Category</button>
         </div>
     );
 };
