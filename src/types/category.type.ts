@@ -1,5 +1,5 @@
 
 export type TCategory={
-    _id: string;
+    _id?:string ;
     name: string;
 }

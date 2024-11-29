@@ -1,8 +1,9 @@
 "use client";
 
-
 import { createCategory } from "@/api/addApi";
+
 import { useState } from "react";
+
 
 interface AddCategoryFormProps {
   onClose: () => void;
@@ -16,6 +17,7 @@ const AddCategoryForm = ({ onClose }: AddCategoryFormProps) => {
     try {
       await createCategory({ name });
       alert("Category added successfully!");
+      window.location.reload();
       onClose();
     } catch (error) {
       console.error("Failed to add category:", error);

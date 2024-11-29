@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 
 import { createAnimal } from "@/api/addApi";
+import { TCategory } from "@/types/category.type";
 import { useState } from "react";
 
 type TAddAnimalFormProps = {
@@ -19,8 +21,9 @@ const AddAnimal = ({ onClose }: TAddAnimalFormProps) => {
   
     console.log("Submitting animal data:", animalData); 
     try {
-      await createAnimal({ name, image, category: categoryId });
+      await createAnimal({ name, image, category : categoryId as unknown as TCategory   });
       alert("Animal added successfully!");
+      window.location.reload()
       onClose();
     } catch (error: any) {
       console.error("Failed to add animal:", error);
